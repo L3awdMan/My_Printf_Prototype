@@ -6,7 +6,7 @@
 /*   By: zotaj-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 16:26:47 by zotaj-di          #+#    #+#             */
-/*   Updated: 2025/06/26 17:08:26 by zotaj-di         ###   ########.fr       */
+/*   Updated: 2025/06/29 15:48:44 by zotaj-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,13 @@ int	ft_printf(const char *str, ...)
 		// if there's '%' go check which specifier it is and return printf lenght
 		if (str[i] == '%')
 		{
+			/*	if (str[i + 1] == '%' || str[i + 2] == '%' || !str[i + 1])
+					write(1, "-1", 2);
+				else
+				{*/
 			printf_len += ft_specifier(arg, str[i + 1]);
 			i++;
+			// }
 		}
 		else
 			printf_len += ft_print_char(str[i]);

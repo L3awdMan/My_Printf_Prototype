@@ -6,7 +6,7 @@
 /*   By: zotaj-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 15:36:49 by zotaj-di          #+#    #+#             */
-/*   Updated: 2025/06/25 23:08:53 by zotaj-di         ###   ########.fr       */
+/*   Updated: 2025/06/29 13:00:01 by zotaj-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	ft_print_ptr(uintptr_t ptr)
 	int	length;
 
 	length = 0;
-	length += write(1, "0x", 2);
 	if (ptr == 0)
-		ft_print_char('0');
+		length += write(1, "(nil)", 5);
 	else
 	{
+		length += write(1, "0x", 2);
 		ft_put_ptr(ptr);
 		length += ft_ptr_len(ptr);
 	}

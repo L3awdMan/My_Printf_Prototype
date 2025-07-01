@@ -5,7 +5,7 @@ AR      = ar rcs
 NAME    = libftprintf.a
 
 # Paths for test and source dir 
-SRC_DIR     = .
+SRC_DIR			= .
 MAIN_PATH   = /home/zotaj-di/Documents/ft_printf/main.c
 
 # Source files
@@ -25,7 +25,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(GREEN)[SUCCESS] $(NC) $(BLUE)$(NAME)$(NC) created successfully! $(GREEN)(ദ്ദി˙ᗜ˙)"
+	@echo "$(GREEN)[SUCCESS](ദ്ദി˙ᗜ˙)$(NC) $(BLUE)$(NAME)$(NC) created successfully! $(GREEN)"
 
 %.o: %.c ft_printf.h
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -33,19 +33,19 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -f $(OBJS)
-	@echo "$(RED)[CLEAN] 🧹🪣 $(NC) Object files removed ∘˙○˚.•"
+	@echo "$(RED)[CLEAN] 🧹🪣$(NC) ∘˙○˚.• Object files removed "
 
 fclean: clean
 	@rm -f $(NAME) printf_test
-	@echo "$(RED)[FCLEAN] 🧹🪣 $(NC) $(BLUE)$(NAME)$(NC) and test executable removed ∘˙○˚.• "
+	@echo "$(RED)[FCLEAN] 🧹🪣$(NC) ∘˙○˚.• $(BLUE)$(NAME)$(NC) and test executable removed"
 
 re: fclean all
 
 # Compile the test main.c 
 test: re
 	@$(CC) $(CFLAGS) $(MAIN_PATH) -L. -lftprintf -o printf_test
-	@echo "$(CYAN)[TEST]$(NC) Running tests from $(BLUE)$(MAIN_PATH)$(NC) ( ◡̀_◡́)▬▬█ "
+	@echo "$(CYAN)[TEST]$(NC) Running tests from $(BLUE)$(MAIN_PATH)$(NC) "
 	@./printf_test
-	@echo "$(GREEN)[TEST PASSED]$(NC) All tests completed successfully$(GREEN) ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧"
+	@echo "$(GREEN)[TEST PASSED] ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧ $(NC) All tests completed successfully$(GREEN)"
 
 .PHONY: all clean fclean re test

@@ -6,7 +6,7 @@
 /*   By: zotaj-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:25:45 by zotaj-di          #+#    #+#             */
-/*   Updated: 2025/07/02 19:45:11 by zotaj-di         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:22:38 by zotaj-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,24 @@ int	main(void)
 	if (ptr)
 		*ptr = 77;
 	int ret_std, ret_ft;
+	// 0. NULL string
+	printf("\033[0;32m");
+	printf(" -- TEST 0 -- NULL pointer \n\n[printf]        : ");
+	sleep(1);
+	ret_std = printf(NULL);
+	printf("[return: %d]\n\n", ret_std);
+	printf("[ft_printf]     : ");
+	fflush(stdout);
+	ret_ft = ft_printf(NULL);
+	fflush(stdout);
+	printf("[return: %d]\n\n", ret_ft);
+	sleep(1);
+	printf("       (•̀ᴗ•́ )و 🎯 \n");
+	sleep(2);
 	// 1. Simple string + int
 	printf("\033[0;32m");
-	printf(" -- TEST 1 -- Simple string + int\n\n[printf]        : ");
+	printf("\n -- TEST 1 -- Simple string + int\n\n[printf]        : ");
+	sleep(1);
 	ret_std = printf("Hello %s, number: %d\n", "world", 42);
 	printf("[return: %d]\n\n", ret_std);
 	printf("[ft_printf]     : ");
@@ -41,6 +56,7 @@ int	main(void)
 	// 2. Hex + unsigned
 	printf("\033[0;32m");
 	printf("\n -- TEST 2 -- Hex + unsigned \n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("Hex: %x, Unsigned: %u\n", 305441741, 4294967295u);
 	printf("[return: %d]\n\n", ret_std);
 	printf("[ft_printf]    : ");
@@ -54,6 +70,7 @@ int	main(void)
 	// 3. Pointer with valid address
 	printf("\033[0;32m");
 	printf("\n -- TEST 3 -- Pointer with valid address\n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("Pointer: %p\n", &x);
 	printf("[return: %d]\n\n", ret_std);
 	printf("[ft_printf]    : ");
@@ -67,6 +84,7 @@ int	main(void)
 	// 4. NULL string
 	printf("\033[0;32m");
 	printf("\n -- TEST 4 -- NULL STRING\n\n[printf]       : ");
+	sleep(1);
 	null_str = NULL;
 	ret_std = printf("NULL string: %s\n", null_str);
 	fflush(stdout);
@@ -82,6 +100,7 @@ int	main(void)
 	// 5. %p with NULL
 	printf("\033[0;32m");
 	printf("\n -- TEST 5 -- Pointer with NULL \n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("NULL ptr: %p\n", NULL);
 	fflush(stdout);
 	printf("[return: %d]\n\n", ret_std);
@@ -96,6 +115,7 @@ int	main(void)
 	// 6. Lone '%'
 	printf("\033[0;32m");
 	printf("\n -- TEST 6 -- Lone Percent \n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("Percent only: UB\n");
 	// UB behavior
 	fflush(stdout);
@@ -111,6 +131,7 @@ int	main(void)
 	// 7. Trailing % after format
 	printf("\033[0;32m");
 	printf("\n -- TEST 7 -- Treating percent after format specifier \n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("Trailing percent: %d%%\n", 123); // UB
 	fflush(stdout);
 	printf("[return: %d]\n\n", ret_std);
@@ -125,6 +146,7 @@ int	main(void)
 	// 8. INT_MIN / MAX
 	printf("\033[0;32m");
 	printf("\n -- TEST 8 -- INT_MIN / MAX\n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("INT_MIN: %d, INT_MAX: %d\n", INT_MIN, INT_MAX);
 	fflush(stdout);
 	printf("[return: %d]\n\n", ret_std);
@@ -139,6 +161,7 @@ int	main(void)
 	// 9. malloc pointer
 	printf("\033[0;32m");
 	printf("\n -- TEST 9 -- malloc pointer\n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("malloc ptr: %p\n", ptr);
 	fflush(stdout);
 	printf("[return: %d]\n\n", ret_std);
@@ -153,6 +176,7 @@ int	main(void)
 	// 10. Mixed format
 	printf("\033[0;32m");
 	printf("\n -- TEST 10 -- Mixed format specifier\n\n[printf]       : ");
+	sleep(1);
 	ret_std = printf("Char: %c, Str: %s, Int: %d, Hex: %X, Ptr: %p\n", 'z',
 			"test", -1234, 0xdeadbeef, &ret_std);
 	fflush(stdout);
